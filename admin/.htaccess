@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Wuzzeln"
+AuthUserFile /var/www/gftp/wuzzeln/admin/.htpasswd
+Require valid-user
