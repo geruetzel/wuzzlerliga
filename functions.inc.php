@@ -193,32 +193,3 @@
 
         return $elo_last;
     }
-
-    function postToHipChat($message, $color)
-    {
-        // Post Parameter in Array schreiben
-        $post = array(
-            "color" => $color,
-            "notify" => "true",
-            "message" => $message,
-            "from" => "",
-        );
-
-        // dieses Array json-encoden
-        $post = json_encode($post);
-
-        // http header für json content setzen
-        $header = array(
-            "Content-type: application/json"
-        );
-
-        // post
-        $url = "https://api.hipchat.com/v2/room/1202360/notification?auth_token=FXulxAawmKShFulUhbvStim48FGmHRl2GYPpUHaz";
-        $c = curl_init();
-        curl_setopt($c, CURLOPT_URL, $url);
-        curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($c, CURLOPT_HTTPHEADER, $header);
-        curl_setopt($c, CURLOPT_POSTFIELDS, $post);
-
-        echo curl_exec($c);
-    }
