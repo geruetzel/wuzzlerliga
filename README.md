@@ -13,4 +13,6 @@ by geruetzel - geruetzel@gmail.com
 
 - Frontend für alle User ist über die index.php im Rootverzeichnis erreichbar
 - Adminzugang über /admin/ (login per httpauth)
+- Zuerst müssen im Adminmenü unter "Spielerverwaltung" die einzelnen Spieler angelegt werden
+- Nun können im Adminmenü unter "Ergebnisse" die Spielergebnisse erfasst werden
 
