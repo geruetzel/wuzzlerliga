@@ -53,8 +53,9 @@
             $id_last = mysqli_fetch_assoc(mysqli_query($con, "SELECT id FROM players ORDER BY id DESC LIMIT 1"));
             $id_new = $id_last["id"] + 1;
 
-            $query = "insert into players (id, name) values"
-                . "('" . $id_new . "', " . "'" . $_POST["name"] . "')";
+            // neuen Spieler in Datenbank schreiben, Startelo ist 1000
+            $query = "insert into players (id, name, elo_current) values"
+                . "('" . $id_new . "', " . "'" . $_POST["name"] . "', " . "'1000')";
 
             mysqli_query($con, $query);
         }
