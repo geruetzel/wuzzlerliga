@@ -1,6 +1,6 @@
 TODO
 * Saisonswechsel:
-    - automatisch neue Tabelle für laufende Saison erstellen automatisch
+    - neue Tabelle für laufende Saison erstellen automatisch
     - automatisch aktuelle Tabelle archivieren
     - Archiv auf Webseite abrufbar machen
     - Elodifferenz zu Vorsaison für Games berechnen (derzeit ist Ausgangselo bei neuer Saison immer 1000)
