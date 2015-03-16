@@ -310,8 +310,11 @@
             while($dsatz = mysqli_fetch_assoc($result))
             {
                 // Die ELO-Differenz für jedes Spiel
-                $diff_pl1 = round($dsatz["elo_player1"]) - round(getLastEloFromCertainGame($dsatz["player1"], $dsatz["id"]));
-                $diff_pl2 = round($dsatz["elo_player2"]) - round(getLastEloFromCertainGame($dsatz["player2"], $dsatz["id"]));
+                $diff_pl1_un = $dsatz["elo_player1"] - getLastEloFromCertainGame($dsatz["player1"], $dsatz["id"]);
+                $diff_pl2_un = $dsatz["elo_player2"] - getLastEloFromCertainGame($dsatz["player2"], $dsatz["id"]);
+                // ELO-Differenz runden
+                $diff_pl1 = round($diff_pl1_un);
+                $diff_pl2 = round($diff_pl2_un);
 
                 // Wenn die ELO-Differenz ein Punktezuwachs ist, ein Plus voranstellen, ansonsten nichts, da das Minus ohnehin angezeigt wird
                 if ($diff_pl1 > 0)
